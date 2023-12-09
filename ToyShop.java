@@ -85,6 +85,20 @@ public ArrayList<Toy> playGame(int count) {
     return winners;
 }
 
+//Сохранение данных об игрушках в файл
+
+public void saveToFile(String filename) throws IOException {
+    try (FileWriter writer = new FileWriter(new File(filename))) {
+        for (Toy t : toys) {
+            writer.write(t.getId() + "," + t.getName() + "," + t.getQuantity() + "," + t.getWeight() + "n");
+        }
+    }
+}
+
+
+
+
+
 
 
 
