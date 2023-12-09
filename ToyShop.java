@@ -42,7 +42,16 @@ public void setWeight (int toyId, double weight) {
     }
 }
 
+//Создание метода получения списка игрушек (id, название, количество, вес)
 
+public ArrayList<String> getToyList() {
+    ArrayList<String> toyList = new ArrayList<>();
+    for (Toy t : toys) {
+        toyList.add("ID:" + t.getId() + "Название:" + t.getName() + "Количество:" + t.getQuantity() + "Вес:" + t.getWeight());
+    }
+
+    return toyList;
+}
 
 
 
