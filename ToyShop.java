@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ToyShop {
-
+    public static void main(String[] args) {
+        }
     private ArrayList<Toy> toys;
 
     public ToyShop() {
@@ -151,15 +152,5 @@ class Toy {
     }
 }
 
-
-
-
-
-
-
- 
 }
-
-
-
 
