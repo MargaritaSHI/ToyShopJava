@@ -53,6 +53,37 @@ public ArrayList<String> getToyList() {
     return toyList;
 }
 
+//Создание метода розыгрыша
+
+public ArrayList<Toy> playGame(int count) {
+    ArrayList<Toy> winners = new ArrayList<>();
+    double weightSum = 0;
+    for (Toy t : toys) {
+        weightSum += t.getWeight();
+
+    }
+
+    Random random = new Random();
+    for (int i = 0; i < count; i++) {
+        double randomNumber = random.nextDouble()*weightSum;
+        double currentSum = 0;
+        for (Toy t : toys) {
+            currentSum += t.getWeight();
+            if (currentSum >= randomNumber) {
+                if (t.getQuantity() > 0) {
+                    winners.add(t);
+                    t.setQuantity(t.getQuantity() - 1);
+                    weightSum -= t.getWeight();
+                }
+
+                break;
+                
+            }
+        }
+    }
+
+    return winners;
+}
 
 
 
