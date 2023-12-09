@@ -19,7 +19,7 @@ public class ToyShop {
 public void add(Toy toy) {
     boolean foundToy = false;
     for (Toy t : toys) {
-        if (t.getID() == toy.getID()) {
+        if (t.getId() == toy.getId()) {
             t.setQuantity(t.getQuantity() + toy.getQuantity());
             foundToy = true;
             break;
@@ -32,6 +32,15 @@ public void add(Toy toy) {
     }
  }
 
+//Создание метода изменения веса игрушек
+
+public void setWeight (int toyId, double weight) {
+    for (Toy t : toys) {
+        if (t.getId() == toyId) {
+            t.setWeight(weight);
+        }
+    }
+}
 
 
 
